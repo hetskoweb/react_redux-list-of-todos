@@ -44,18 +44,12 @@ export const App = () => {
               <TodoFilter />
             </div>
 
-            {filteredTodos.length === 0 ? (
-              <p className="notification is-warning">
-                There are no todos matching current filter criteria
-              </p>
-            ) : (
-              ''
-            )}
-
             <div className="block">
               {loading && <Loader />}
               {filteredTodos.length === 0 ? (
-                ''
+                <p className="notification is-warning">
+                  There are no todos matching current filter criteria
+                </p>
               ) : (
                 <TodoList todos={filteredTodos} />
               )}
